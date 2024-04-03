@@ -23,7 +23,7 @@ export default function useData() {
     // Toat Messages
     const showAddNewPlayerToastMessage = (playerName) => {
         toast.success(`${playerName} successfully added!`, {
-            position: "top-right",
+            position: "bottom-right",
             autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,
