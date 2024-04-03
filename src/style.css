@@ -137,7 +137,7 @@ header {
 /* Hero section */
 .hero-section {
     position: relative;
-    background-image: url("./assets/images/hero-section-bg1.jpeg");
+    background-image: url("./public/assets/images/hero-section-bg1.jpeg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -553,4 +553,36 @@ dialog {
     background-color: var(--dark-blue);
     opacity: 0.8;
 }
+/* End */
+
+/* Footer */
+footer {
+
+    --_span-margin: .3rem;
+
+    background-color: #211f20;
+    color: var(--text-primary);
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    padding-block: 3rem;
+    margin-top: 2rem;
+}
+
+.heart-icon {
+    display: block;
+    --_size: 20px;
+    width: var(--_size);
+    height: var(--_size);
+    color: var(--light-red);
+    margin-inline: var(--_span-margin)
+}
+
+.author-name {
+    color: #d5e638;
+    margin-left: var(--_span-margin);
+}
+
 /* End */
