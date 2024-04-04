@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 
 
 import { Bounce, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 import useRegisterForm from "./useRegisterForm";
 
 
@@ -23,7 +22,7 @@ export default function useData() {
     // Toat Messages
     const showAddNewPlayerToastMessage = (playerName) => {
         toast.success(`${playerName} successfully added!`, {
-            position: "bottom-right",
+            position: "top-right",
             autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,

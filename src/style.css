@@ -76,6 +76,10 @@ a {
 
 body {
     background-color: var(--background-primary);
+    /* position: relative; */
+}
+
+#root {
     position: relative;
 }
 
@@ -137,7 +141,7 @@ header {
 /* Hero section */
 .hero-section {
     position: relative;
-    background-image: url("./public/assets/images/hero-section-bg1.jpeg");
+    background-image: url("../public/assets/images/hero-section-bg1.jpeg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
