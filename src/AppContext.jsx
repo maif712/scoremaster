@@ -2,6 +2,7 @@ import { createContext, useContext, useRef } from "react";
 import useRegisterForm from "./hooks/useRegisterForm";
 import useData from "./hooks/useData";
 import useEditForm from "./hooks/useEditForm";
+import useNavMenu from "./hooks/useNavMenu";
 
 
 const AppContext = createContext(null)
@@ -46,6 +47,14 @@ export function AppContextProvider({ children }) {
     } = useEditForm()
     // 
 
+    // Nav custom hook
+    const {
+        isMenuOpen,
+        handleOpenNavMenu,
+        handleCloseNavMenu
+    } = useNavMenu()
+    // 
+
     // Modal
     const deleteModalRef = useRef()
 
@@ -81,7 +90,12 @@ export function AppContextProvider({ children }) {
 
         // Modal
         deleteModalRef,
-        handleOpenDeleteModalRef
+        handleOpenDeleteModalRef,
+
+        // nav menu
+        isMenuOpen,
+        handleOpenNavMenu,
+        handleCloseNavMenu
     }
 
 

@@ -31,6 +31,7 @@ export default function useData() {
             progress: undefined,
             theme: "light",
             transition: Bounce,
+            className: "t-s"
         });
     }
 
