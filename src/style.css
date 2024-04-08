@@ -119,6 +119,14 @@ body {
     margin-bottom: 100%;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.radius-8 {
+    border-radius: 8px;
+}
+
 /* End */
 
 /* Header */
@@ -636,11 +644,46 @@ dialog {
 /* Dice */
 .dice-section {
     padding-block: 2rem;
-    background: radial-gradient(circle at top, #404149, #191b22 40%);
-    background-repeat: no-repeat;
+    /* background: radial-gradient(circle at top, #404149, #191b22 40%); */
+    /* background-repeat: no-repeat; */
+    background-color: #191b22;
     /* background-attachment: fixed; */
-    min-height: 100vh;
+    min-height: 100svh;
 }
+
+.dices-parent {
+    position: relative;
+    padding-inline: 3rem;
+}
+
+.dices-parent::after,
+.dices-parent::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+}
+
+.dices-parent::after {
+    right: 0;
+    background: linear-gradient(to left, #191b22, transparent);
+}
+
+.dices-parent::before {
+    left: 0;
+    background: linear-gradient(to right, #191b22, transparent);
+}
+
+.dices-container {
+    display: flex;
+    gap: 1rem;
+    width: 100px;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(var(--x));
+}
+
 .dice-title {
     text-align: center;
     font-size: 3rem;
@@ -658,8 +701,9 @@ dialog {
     aspect-ratio: 1;
     background-color: #374668;
     border-radius: 8px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     border: 2px solid var(--blue-600);
+    flex-shrink: 0;
 }
 
 .dice span {
@@ -691,8 +735,8 @@ dialog {
 }
 
 .dice-two span:nth-child(2) {
- bottom: var(--_position);
- right: var(--_position);
+    bottom: var(--_position);
+    right: var(--_position);
 }
 
 /* _three */
@@ -718,7 +762,7 @@ dialog {
 
 /* _four */
 .dice-four {
-    --_position : 10px;
+    --_position: 10px;
 }
 
 .dice-four span:nth-child(1) {
@@ -743,7 +787,7 @@ dialog {
 
 /* _five */
 .dice-five {
-    --_position : 10px;
+    --_position: 10px;
 }
 
 .dice-five span:nth-child(1) {
@@ -774,7 +818,7 @@ dialog {
 
 /* _six */
 .dice-six {
-    --_position : 10px;
+    --_position: 10px;
 }
 
 .dice-six span:nth-child(1) {
@@ -810,7 +854,7 @@ dialog {
 }
 
 .roll-dice-btn {
-    background: linear-gradient(to right, #677be6,#7257b3);
+    background: linear-gradient(to right, #677be6, #7257b3);
     color: var(--text-primary);
     font-size: 1.4rem;
     margin-top: 4rem;
@@ -825,6 +869,7 @@ dialog {
     border-color: var(--text-secondary);
     background: transparent;
 }
+
 /* End */
 
 /* Footer */

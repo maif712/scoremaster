@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { diceData } from "../constants";
 
 export default function useDice() {
 
-    const [selectedDice, setSelectedDice] = useState(diceData[0])
+    const [dices, setDices] = useState([])
+    const [chosenItemIndex, setChosenItemIndex] = useState(2)
     const [isRolling, setIsRolling] = useState(false)
+    const [rnd, setRnd] = useState(false)
+
+    useEffect(() => {
+        setDices(diceData.sort(() => 0.5 - Math.random()))
+    }, [rnd])
 
 
     let temp = 0
@@ -21,20 +27,24 @@ export default function useDice() {
     }
 
     const handleRoll = () => {
+
+        const finallTime = 1200
+        setRnd(prev => !prev)
         setIsRolling(true)
-        for (let index = 0; index < 6; index++) {
+        for (let index = 0; index <= diceData.length; index++) {
             setTimeout(() => {
-                setSelectedDice(diceData[RandomNumber()])
-            }, 200 * index);
+                setChosenItemIndex(RandomNumber())
+            }, (finallTime / diceData.length) * index);
         }
         setTimeout(() => {
             setIsRolling(false)
-        }, 1000);
+        }, finallTime + 400); //400 is for 0.4s dices container transitiom timing
     }
 
     return {
-        selectedDice,
+        dices,
         isRolling,
-        handleRoll
+        handleRoll, 
+        chosenItemIndex
     }
 }
