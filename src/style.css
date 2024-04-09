@@ -95,6 +95,10 @@ body {
     justify-content: space-between;
 }
 
+.gap-05 {
+    gap: 0.5rem;
+}
+
 .gap-1 {
     gap: 1rem;
 }
@@ -105,6 +109,10 @@ body {
 
 .p-1 {
     padding: 1rem;
+}
+
+.p-block-1 {
+    padding-block: 1rem;
 }
 
 .bg-blue-100 {
@@ -125,6 +133,12 @@ body {
 
 .radius-8 {
     border-radius: 8px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 /* End */
@@ -646,8 +660,8 @@ dialog {
     padding-block: 2rem;
     /* background: radial-gradient(circle at top, #404149, #191b22 40%); */
     /* background-repeat: no-repeat; */
-    background-color: #191b22;
     /* background-attachment: fixed; */
+    background-color: #191b22;
     min-height: 100svh;
 }
 
@@ -715,6 +729,65 @@ dialog {
     border-radius: 100vh;
     background-color: #b6c0d3;
 }
+
+.rolls-history {
+    margin-top: 4rem;
+    background-color: #fafff4;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 8px;
+}
+
+.rolls-history__title {
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background-color: #7eb820;
+}
+
+.rolls-history__para {
+    text-align: center;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-block: 0.5rem;
+    backdrop-filter: blue(5px);
+    background-color: #ffffffe1;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04)
+}
+
+.roll {
+    position: relative;
+    background-color: #f3f7fd;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    margin-inline: 0.5rem;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04)
+}
+
+.roll.six::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #4c77db;
+}
+
+.roll.six span {
+    color: #4c77db;
+}
+
+.roll span {
+    color: #8893aa;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 
 /* _one */
 .dice-one span {
