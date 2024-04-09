@@ -732,12 +732,14 @@ dialog {
 
 .rolls-history {
     margin-top: 4rem;
-    background-color: #fafff4;
+    background-color: #292a2e;
     min-height: 300px;
     max-height: 400px;
     overflow-y: auto;
     position: relative;
     border-radius: 8px;
+    isolation: isolate;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .rolls-history__title {
@@ -755,20 +757,48 @@ dialog {
     text-transform: capitalize;
     padding-block: 0.5rem;
     backdrop-filter: blue(5px);
-    background-color: #ffffffe1;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04)
+    background-color: #1f283ae0;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04);
+    color: var(--text-primary);
 }
 
 .roll {
     position: relative;
-    background-color: #f3f7fd;
+    background-color: #1d1e22;
     padding: 0.5rem 1rem;
     text-align: center;
     margin-inline: 0.5rem;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04)
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.04);
 }
 
-.roll.six::before {
+.roll.six::before{
+    content: '';
+    position: absolute;
+    left: -2.5px;
+    top: -2.5px;
+    background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: glower 20s linear infinite;
+  }
+  
+  @keyframes glower {
+    0% {
+      background-position: 0 0;
+    }
+    
+    50% {
+      background-position: 400% 0;
+    }
+    
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+/* .roll.six::before {
     content: "";
     position: absolute;
     left: 0;
@@ -776,10 +806,14 @@ dialog {
     width: 4px;
     height: 100%;
     background-color: #4c77db;
+} */
+
+.roll.six {
+    /* background-color: #031338; */
 }
 
 .roll.six span {
-    color: #4c77db;
+    color: var(--text-primary);
 }
 
 .roll span {

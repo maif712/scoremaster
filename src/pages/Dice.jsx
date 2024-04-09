@@ -37,7 +37,7 @@ export default function Dice() {
           <div className="rolls-history">
             <div className="sticky">
               <h3 className="rolls-history__title">rolls history</h3>
-              <p className="rolls-history__para">your six: ({sixAmount})</p>
+              <p className="rolls-history__para">my sixes: ({sixAmount})</p>
             </div>
             <div className="flex flex-col gap-05 p-block-1">
               {rollsHistory.map((roll, index) => {
